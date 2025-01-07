@@ -1,8 +1,12 @@
 # How To Setup Vii No Ma 
 
+**
+THIS IS NOT ASSOCIATED NOR ENDORSED BY NINTENDO OR WIILINK
+**
+
 For setup you have Need:
 
--Wii No Ma Wad
+-Wii No Ma Wad (v1025 for now,v770 and V0 is planned)
 
 -Wii C.S Tools
 
@@ -43,7 +47,7 @@ You Should find SomeThing Like This
 
 ![Capture d’écran 2025-01-06 204314](https://github.com/user-attachments/assets/1b337340-c4b4-4b35-b742-c442cae8fd1f)
 
-Remplace https://wmp2v3.wapp.wii.com/ With http:// ipv4 or 127.0.0.1/ (if you use dolphin set 127.0.0.1 or is a real wii set your ip (go to CMD and IPConfig and search IPv4 adress ))
+Remplace https://wmp2v3.wapp.wii.com/ With http:// ipv4 or 127.0.0.1/ (if you use dolphin set 127.0.0.1 or is a real wii in JAPANESE set your ip (go to CMD and IPConfig and search IPv4 adress ))
 
 Find .img and remplace that with .jpg
 
@@ -64,9 +68,18 @@ Step 6:
 
 Is Now To Test The Wad.Launch The Wad On Dolphin Emulator
 
-If You Have Error Code 354002,Your Wad Is Patched
+If You Have Error Code 354002,Your Wad Is Patched.
 If You Have Invalid Read or Wad Not Launching Or Any Error Code
 Please Contact Me On Discord
 
 https://discord.gg/SQyHq4Mq22 This Is The Vii No Ma Server Link
 
+## if is not working, before contacting me try this
+
+did you patch all of the urls
+
+is it all http
+
+are you using WadMII 
+
+are you using the latest version of Wii No Ma (v1025)
