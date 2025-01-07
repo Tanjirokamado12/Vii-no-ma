@@ -1,9 +1,9 @@
-# vii-no-ma
+# Vii-no-ma
 
 This Is The Wii No Ma Revival Projet For Create their Own Server
 This Contain Only The Patching.But it Will Be Updated
 
-# Note:
+# Notes:
 
 This wad will only Work On A Japanese Wii,but i will fix it
 
