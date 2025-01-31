@@ -13,5 +13,7 @@ the 00000001.app On Tools folder Are Only For Dolphin,it will not work on real w
 # What types of file Regenarated
 
 Datetime.xml and Reginfo.cgi
+
 First.bin
 
+Only there files are generated
