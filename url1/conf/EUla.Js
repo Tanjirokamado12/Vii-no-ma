@@ -10,8 +10,8 @@ function convertTextToXml(inputFile, outputFile) {
             return;
         }
 
-        // Create the XML structure
-        const xml = xmlbuilder.create('LicenseAgree')
+        // Create the XML structure without the XML declaration
+        const xml = xmlbuilder.create('LicenseAgree', { headless: true })
             .ele('ver', 1).up()
             .ele('agree', data).end({ pretty: true });
 
