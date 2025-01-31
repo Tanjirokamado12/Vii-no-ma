@@ -1,0 +1,18 @@
+<Config>
+  <ver>9999</ver>
+  <maint>0</maint>
+  <url1>https://a248.e.akamai.net/f/248/101379/10m/wmp1v3.wapp.wii.com/Oc3c0HJ0rYkHxu8lAbqtjggeg7hzxUEk/</url1>
+  <url2>https://wmp2v3.wapp.wii.com/6JzXqmU3ncdv0tUCoG5xquoow0stXgLz/</url2>
+  <url3>https://a248.e.akamai.net/f/248/101379/10m/wmppayv3.wapp.wii.com/egzlOcaYmuoOv0JyYfvN9f7Oneg2Uh5i/</url3>
+  <eulaver>3</eulaver>
+  <shopurl>https://a248.e.akamai.net/f/248/101381/10m/cdn02.wshop.wiinoma.co.jp/flash_ui-a/index.esf</shopurl>
+  <shopkey>7fce738e542f0a60fe5d8d8e1e8781af</shopkey>
+  <shopvalid>1</shopvalid>
+  <akahost>.akamai.net</akahost>
+  <akaca>1</akaca>
+  <smpkey>5ab362aa57dbb1dc16849e3e2d1cf2ff</smpkey>
+  <fmax>30</fmax>
+  <bmax>10</bmax>
+  <upddt>2010-10-27T23:00:00</upddt>
+</Config>
+
