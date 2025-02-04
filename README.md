@@ -1,29 +1,38 @@
 # Vii-no-ma
 
-This Is The Wii No Ma Revival Projet For Create their Own Server
-This Contain Only The Patching.But it Will Be Updated
+A Wii No Ma Revival (current version maintenanced are v770)
 
-# Notes:
+# Note
 
-This wad will only Work On A Japanese Wii,but i will fix it
+This server is not completed there is still a missing things
 
-the 00000001.app On Tools folder Are Only For Dolphin,it will not work on real wii
+# Setup
 
-There is a Region Screen,Can be disabled if wii room is setup up and on config i need to disable it
+For this (only web server) You Need 
 
-Tutorial are for v1025,i have switched version to v770 
+-[nginx](https://nginx.org/en/) (v1.18.0)
+
+-[NodeJS](https://nodejs.org/en) 
+
+-[OpenSSL]([https://nodejs.org/en](https://sourceforge.net/projects/openssl/)) 
+
+-Install NodeJS
+-Extract Nginx to any directory
+-go to Nginx folder/html
+-Move URL1 from this reportory into html folder
+-go to your nginx install/html/url1/conf/ with cmd
+-run nodejs datetime.js (you need to launch script everytime)
+-go to html folder
+-md conf
+-go to conf from this repertory 
+-select v1025 or v770 
+-Remplace 127.0.0.1 with your ipv4
+-rename v770 example.txt or v770 First.txt to first.txt
+-run encryption script
+-move it into html/conf/
+And that it's
+I will gonna make a video tutorial Soon is anything is not explained corectly and i will Recreate the projet from nothing
 
 
 
-# What types of file Regenarated
-
-Datetime.xml and Reginfo.cgi
-
-First.bin
-
-Only there files are generated
-
-# Updates
-
-I Have Add The Underground for v770 (The Main Version)
 
