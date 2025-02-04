@@ -11,6 +11,8 @@ the 00000001.app On Tools folder Are Only For Dolphin,it will not work on real w
 
 There is a Region Screen,Can be disabled if wii room is setup up and on config i need to disable it
 
+Tutorial are for v1025,i have switched version to v770 
+
 
 
 # What types of file Regenarated
@@ -20,3 +22,8 @@ Datetime.xml and Reginfo.cgi
 First.bin
 
 Only there files are generated
+
+# Updates
+
+I Have Add The Underground for v770 (The Main Version)
+
