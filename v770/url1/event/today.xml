@@ -1,0 +1,17 @@
+<Event>
+    <ver>1</ver>
+    <date>2025-02-08</date>
+    <posterid>1</posterid>
+    <frameid>2</frameid>
+    <color>000000</color>
+    <newsinfo>
+        <page>1</page>
+        <news>Welcome to Wii Room</news>
+    </newsinfo>
+    <adinfo>
+        <pref>2</pref>
+        <adid>1</adid>
+        <pref>1</pref>
+        <adid>1</adid>
+    </adinfo>
+</Event>
