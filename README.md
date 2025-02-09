@@ -27,3 +27,14 @@ go to cd back
 run node server.js
 
 and server has been configured
+
+# For Edit Assets
+
+Go to Files and select the element to edit
+
+remplace everything such as text with your own and save it and reboot server
+
+if you want to change assets,you Need Paint.net
+
+Open a asset on paint.net,create your assist and save it as JPG And don't edit resolution or it will not work and quality save it as 10
+
