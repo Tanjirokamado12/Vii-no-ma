@@ -28,13 +28,24 @@ run node server.js
 
 and server has been configured
 
-# For Edit Assets
+# Progress Report
 
-Go to Files and select the element to edit
+First Setup:100% Done
 
-remplace everything such as text with your own and save it and reboot server
+Status:Done
 
-if you want to change assets,you Need Paint.net
+Accesing to the room:50%
 
-Open a asset on paint.net,create your assist and save it as JPG And don't edit resolution or it will not work and quality save it as 10
+We have regenerated a part of files,only 2 files are missing and v770 are not ready 
 
+Theatre Room:25%
+
+Only Theatre Poster are restored and same for Category
+
+Room:0%
+
+Due i don't have access to The Room,This fonctionnality is not ready for now
+
+Shows:0%
+
+This fonctionnality is not ready for now because i don't have acccess to the room
