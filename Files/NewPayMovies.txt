@@ -1,0 +1,12 @@
+<start_movieinfo>
+rank:1
+movieid:1
+title:U
+kana:12345678
+refid:01234567890123456789012345678912
+strdt:2020-01-01T00:00:00
+pop:0
+released:2011-07-15
+term:30
+price:0
+<end_movieinfo>

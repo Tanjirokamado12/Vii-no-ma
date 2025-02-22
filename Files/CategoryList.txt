@@ -1,0 +1,5 @@
+<categinfo_start>
+place:1
+categid:10000
+name:Music
+</categinfo_end>
