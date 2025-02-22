@@ -1,6 +1,0 @@
-PosterID: 1
-Message: Test
-MovieID: 1
-PosterID: 2
-Message: Test
-MovieID: 2
