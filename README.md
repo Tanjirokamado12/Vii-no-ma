@@ -34,9 +34,9 @@ First Setup:100% Done
 
 Status:Done
 
-Accesing to the room:50%
+Accesing to the room:75%
 
-We have regenerated a part of files,only 2 files are missing and v770 are not ready 
+Wii Room v770 Room Acces has been restored.not yet for v1025
 
 Theatre Room:25%
 
