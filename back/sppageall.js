@@ -6,16 +6,11 @@ const inputFile = path.join(__dirname, '..', 'files', 'sppageall.txt');
 
 // Define the output file paths
 const outputFilePath1 = path.join(__dirname, '..', 'v770', 'url1', 'special', 'all.xml');
-const outputFilePath2 = path.join(__dirname, '..', 'v1025', 'url1', 'special', 'all.xml');
 
 // Function to write content to the specified output files
 const writeContentToFile = (content) => {
    fs.writeFile(outputFilePath1, content, (err) => {
       if (err) console.error('Error writing to', outputFilePath1, err);
-   });
-
-   fs.writeFile(outputFilePath2, content, (err) => {
-      if (err) console.error('Error writing to', outputFilePath2, err);
    });
 };
 

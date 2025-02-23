@@ -3,7 +3,6 @@ const path = require('path');
 
 // Define the file paths
 const inputFilePath = path.join(__dirname, '../files/PayEvent.txt');
-const filePath1 = path.join(__dirname, '../v1025/url3/pay/event/today.xml');
 const filePath2 = path.join(__dirname, '../v770/url3/pay/event/today.xml');
 
 // Function to read PayEvent.txt and parse the content
@@ -58,11 +57,9 @@ const xmlContent2 = `<Event>
 </Event>`;
 
 // Create directories if they don't exist
-fs.mkdirSync(path.dirname(filePath1), { recursive: true });
 fs.mkdirSync(path.dirname(filePath2), { recursive: true });
 
 // Write the XML content to the files
-fs.writeFileSync(filePath1, xmlContent1.trim(), 'utf8');
 fs.writeFileSync(filePath2, xmlContent2.trim(), 'utf8');
 
-console.log('XML files for v1025 and v770 generated successfully!');
+console.log('XML files for  v770 generated successfully!');

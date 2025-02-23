@@ -3,7 +3,6 @@ const path = require('path');
 
 // Define the file paths
 const inputFilePath = path.join(__dirname, '../files/PayPosterMeta.txt');
-const outputDir1 = path.join(__dirname, '../v1025/url3/pay/wall');
 const outputDir2 = path.join(__dirname, '../v770/url3/pay/wall');
 
 // Function to read PayPosterMeta.txt and parse the content
@@ -39,7 +38,6 @@ function readPayPosterMetaFile(filePath) {
 const posterMetaList = readPayPosterMetaFile(inputFilePath);
 
 // Create the output directories if they don't exist
-fs.mkdirSync(outputDir1, { recursive: true });
 fs.mkdirSync(outputDir2, { recursive: true });
 
 // Write the XML content to the output files
@@ -53,8 +51,7 @@ posterMetaList.forEach(({ posterid, message, movieid }) => {
   <aspect>1</aspect>
 </PosterMeta>`;
     const fileName = `${posterid}.met`;
-    fs.writeFileSync(path.join(outputDir1, fileName), xmlContent.trim(), 'utf8');
     fs.writeFileSync(path.join(outputDir2, fileName), xmlContent.trim(), 'utf8');
 });
 
-console.log('XML files for v1025 and v770 generated successfully!');
+console.log('XML files for  v770 generated successfully!');

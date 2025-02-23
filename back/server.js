@@ -17,11 +17,10 @@ app.get('/', (req, res) => {
    res.send('Hello World!');
 });
 
-app.use((req, res, next) => {
-    if (req.path === '/conf/first.bin' && req.headers['user-agent'].includes('WM/14125/100923141009/8982938986159643')) {
-        return res.sendFile(path.join(__dirname, '../v1025/first.bin'));
-    }
-    next();
+// Redirect route
+app.get('/v770/movie/c:categoryId/:imageName', (req, res) => {
+    const imageName = req.params.imageName;
+    res.redirect(301, `/Movie/${imageName}`);
 });
 
 // Require and run other Node.js scripts
