@@ -6,7 +6,7 @@ const { execSync, exec } = require('child_process');
 
 // URLs for downloading first.bin files
 const urls = {
-    v770: 'https://wmp1v2.wapp.wii.com/conf/first.bin','
+    v770: 'https://wmp1v2.wapp.wii.com/conf/first.bin'
 };
 
 // Paths to save the downloaded and processed files
