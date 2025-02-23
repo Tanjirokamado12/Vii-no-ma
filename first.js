@@ -6,8 +6,7 @@ const { execSync, exec } = require('child_process');
 
 // URLs for downloading first.bin files
 const urls = {
-    v770: 'https://wmp1v2.wapp.wii.com/conf/first.bin',
-    v1025: 'https://wmp2v3.wapp.wii.com/conf/first.bin'
+    v770: 'https://wmp1v2.wapp.wii.com/conf/first.bin','
 };
 
 // Paths to save the downloaded and processed files
@@ -15,10 +14,6 @@ const paths = {
     v770: {
         bin: path.join(__dirname, '/v770/first.bin'),
         txt: path.join(__dirname, '/v770/first.txt')
-    },
-    v1025: {
-        bin: path.join(__dirname, '/v1025/first.bin'),
-        txt: path.join(__dirname, '/v1025/first.txt')
     }
 };
 
@@ -121,10 +116,9 @@ async function processFiles(version) {
     }
 }
 
-// Process the files for both v770 and v1025
+// Process the files for v770
 async function processAllFiles() {
     await processFiles('v770');
-    await processFiles('v1025');
 }
 
 // Start the processing
