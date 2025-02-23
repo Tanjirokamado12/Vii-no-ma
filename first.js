@@ -12,8 +12,8 @@ const urls = {
 // Paths to save the downloaded and processed files
 const paths = {
     v770: {
-        bin: path.join(__dirname, '/v770/first.bin'),
-        txt: path.join(__dirname, '/v770/first.txt')
+        bin: path.join(__dirname, '/conf/first.bin'),
+        txt: path.join(__dirname, '/conf/first.txt')
     }
 };
 
