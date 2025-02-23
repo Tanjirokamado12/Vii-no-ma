@@ -34,18 +34,18 @@ First Setup:100% Done
 
 Status:Done
 
-Accesing to the room:75%
+Accesing to the room:100%
 
-Wii Room v770 Room Acces has been restored.not yet for v1025
+Access on the room for wii room v770 is restored (for moment i have suspended v0/v512/v1025)
 
 Theatre Room:25%
 
-Only Theatre Poster are restored and same for Category
+Only New Movies and header are restored.
 
 Room:0%
 
-Due i don't have access to The Room,This fonctionnality is not ready for now
+This fonctionnality has been not worked on
 
-Shows:0%
+Shows:10%
 
-This fonctionnality is not ready for now because i don't have acccess to the room
+I got Category Working.but not Category Search,Search for movies,New Movies,Popular Movies and Mii And Rooms Category
