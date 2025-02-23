@@ -55,18 +55,18 @@ async function downloadAndSave(url, outputPath) {
 
 // Function to decrypt the file
 function decryptFile(inputPath, outputPath) {
-    execSync(`openssl aes-128-cbc -d -in ${inputPath} -out ${outputPath} -K ${opensslKey} -iv ${opensslIV}`);
+    execSync(`openssl aes-128-cbc -d -in "${inputPath}" -out "${outputPath}" -K ${opensslKey} -iv ${opensslIV}`);
 }
 
 // Function to encrypt the file
 function encryptFile(inputPath, outputPath) {
-    execSync(`openssl aes-128-cbc -e -in ${inputPath} -out ${outputPath} -K ${opensslKey} -iv ${opensslIV}`);
+    execSync(`openssl aes-128-cbc -e -in "${inputPath}" -out "${outputPath}" -K ${opensslKey} -iv ${opensslIV}`);
 }
 
 // Function to open the file in Notepad and wait for it to close
 function openInNotepad(filePath) {
     return new Promise((resolve, reject) => {
-        exec(`notepad ${filePath}`, (error, stdout, stderr) => {
+        exec(`notepad "${filePath}"`, (error, stdout, stderr) => {
             if (error) {
                 reject(error);
                 return;
