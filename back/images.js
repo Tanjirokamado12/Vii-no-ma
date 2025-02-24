@@ -3,6 +3,7 @@ const path = require('path');
 
 // Define the source and destination directories
 const sourceWallDir = path.join(__dirname, '../assets/wall');
+const destWallDir1 = path.join(__dirname, '../v512/url1/wall');
 const destWallDir2 = path.join(__dirname, '../v770/url1/wall');
 
 const SourceCategorydir = path.join(__dirname, '../assets/category');
@@ -38,6 +39,7 @@ function copyJpgFiles(source, destination) {
 
 // Copy .jpg files to both destination directories for wall
 copyJpgFiles(SourceCategorydir, CategoryDir);
+copyJpgFiles(sourceWallDir, destWallDir1);
 copyJpgFiles(sourceWallDir, destWallDir2);
 
 // Copy .jpg files to destination directories for pay wall

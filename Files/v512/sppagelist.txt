@@ -1,0 +1,9 @@
+<pageinfo>
+sppageid:1
+name:Name
+level:1
+miiid:1
+color1:000000
+color2:000000
+logo1id:g1234
+</pageinfo>
