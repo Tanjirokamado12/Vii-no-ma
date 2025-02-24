@@ -3,10 +3,10 @@ const path = require('path');
 const xmlbuilder = require('xmlbuilder');
 
 // Define the input file path
-const inputFile = path.join(__dirname, '..', 'files', 'sppageall.txt');
+const inputFile = path.join(__dirname, '..', 'files', 'sppageallbin.txt');
 
 // Define the output file path
-const outputFilePath1 = path.join(__dirname, '..', 'v770', 'url1', 'special', 'all.xml');
+const outputFilePath1 = path.join(__dirname, '..', 'v770', 'url1', 'special', 'allbin.xml');
 
 // Function to write content to the specified output files
 const writeContentToFile = (content) => {
@@ -19,9 +19,9 @@ const writeContentToFile = (content) => {
 fs.access(inputFile, fs.constants.F_OK, (err) => {
     if (err) {
         // File does not exist, create default content
-        const defaultContent = `<SpPageList>
+        const defaultContent = `<SpPageBin>
   <ver>1</ver>
-</SpPageList>`;
+</SpPageBin>`;
 
         // Write the default content to the output files
         writeContentToFile(defaultContent);

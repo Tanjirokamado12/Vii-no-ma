@@ -13,6 +13,7 @@ require('./Calendar.js');
 require('./categorylist.js');
 require('./NewPayMoves.js');
 require('./PayCategoryHeader.js');
+require('./sppagebin.js');
 
 //v0 and 512 Requirments
 require('./v512/AllNew.js');
@@ -62,8 +63,7 @@ app.use('/conf/first.bin',(req, res, next) => {
     next();
 });
 
-// Require and run other Node.js scripts
-
+// Require and run other Node.js scriptss
 
 const port = process.env.PORT || 80;
 app.listen(port, () => {

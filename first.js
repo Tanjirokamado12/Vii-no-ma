@@ -30,6 +30,13 @@ const agent = new https.Agent({
     rejectUnauthorized: false,
 });
 
+// Function to create folders if they don't exist
+function createFolder(folderPath) {
+    if (!fs.existsSync(folderPath)) {
+        fs.mkdirSync(folderPath, { recursive: true });
+    }
+}
+
 // Function to download and save the file
 async function downloadAndSave(url, outputPath) {
     const response = await axios({
@@ -99,6 +106,10 @@ function openInNotepad(filePath) {
 // Function to process the files for a given version
 async function processFiles(version) {
     const { bin, txt } = paths[version];
+
+    // Create folders if they don't exist
+    createFolder(path.dirname(bin));
+    createFolder(path.dirname(txt));
 
     try {
         console.log(`Starting download for ${version}...`);
