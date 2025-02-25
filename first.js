@@ -1,142 +1,76 @@
 const fs = require('fs');
-const axios = require('axios');
-const https = require('https');
 const path = require('path');
-const { execSync, exec } = require('child_process');
+const readlineSync = require('readline-sync');
+const { exec } = require('child_process');
 
-// URLs for downloading first.bin files
-const urls = {
-    v770: 'https://wmp1v2.wapp.wii.com/conf/first.bin',
-    v512: 'https://wmp1.wapp.wii.com/conf/first.bin'
-};
+// Prompt the user for their IP address
+const userIP = readlineSync.question('Please enter your IP address: ');
 
-// Paths to save the downloaded and processed files
-const paths = {
-    v770: {
-        bin: path.join(__dirname, '/conf/first.bin'),
-        txt: path.join(__dirname, '/conf/first.txt')
-    },
-    v512: {
-        bin: path.join(__dirname, '/v512/first.bin'),
-        txt: path.join(__dirname, '/v512/first.txt')
-    }
-};
+console.log(`You entered: ${userIP}`);
 
-// OpenSSL decryption and encryption keys
-const opensslKey = '943B13DD87468BA5D9B7A8B899F91803';
-const opensslIV = '66B33FC1373FE506EC2B59FB6B977C82';
+const filesToCopy = ['assets/v512first.txt', 'assets/v770first.txt'];
+const placeholderIP = 'ip'; // The placeholder to be replaced
+const v512Dir = path.join(__dirname, 'v512');
+const v770Dir = path.join(__dirname, 'conf');
 
-const agent = new https.Agent({
-    rejectUnauthorized: false,
-});
+// Create directories if they don't exist
+if (!fs.existsSync(v512Dir)) fs.mkdirSync(v512Dir);
+if (!fs.existsSync(v770Dir)) fs.mkdirSync(v770Dir);
 
-// Function to create folders if they don't exist
-function createFolder(folderPath) {
-    if (!fs.existsSync(folderPath)) {
-        fs.mkdirSync(folderPath, { recursive: true });
-    }
-}
+filesToCopy.forEach(file => {
+    const fileName = path.basename(file);
+    const destPath = path.join(__dirname, fileName);
 
-// Function to download and save the file
-async function downloadAndSave(url, outputPath) {
-    const response = await axios({
-        method: 'get',
-        url: url,
-        responseType: 'stream',
-        httpsAgent: agent,
-    });
+    fs.copyFile(file, destPath, (err) => {
+        if (err) {
+            console.error(`Failed to copy ${file}:`, err);
+            return;
+        }
+        console.log(`${fileName} was copied to ${destPath}`);
 
-    return new Promise((resolve, reject) => {
-        const writer = fs.createWriteStream(outputPath);
-        response.data.pipe(writer);
-
-        let error = null;
-        writer.on('error', err => {
-            error = err;
-            writer.close();
-            reject(err);
-        });
-
-        writer.on('close', () => {
-            if (!error) {
-                resolve();
-            }
-        });
-    });
-}
-
-// Function to decrypt the file
-function decryptFile(inputPath, outputPath) {
-    execSync(`openssl aes-128-cbc -d -in "${inputPath}" -out "${outputPath}" -K ${opensslKey} -iv ${opensslIV}`);
-}
-
-// Function to encrypt the file
-function encryptFile(inputPath, outputPath) {
-    execSync(`openssl aes-128-cbc -e -in "${inputPath}" -out "${outputPath}" -K ${opensslKey} -iv ${opensslIV}`);
-}
-
-// Function to open the file in Notepad and wait for it to close
-function openInNotepad(filePath) {
-    return new Promise((resolve, reject) => {
-        exec(`notepad "${filePath}"`, (error, stdout, stderr) => {
-            if (error) {
-                reject(error);
+        // Read the copied file and replace the placeholder IP
+        fs.readFile(destPath, 'utf8', (err, data) => {
+            if (err) {
+                console.error(`Failed to read ${destPath}:`, err);
                 return;
             }
 
-            // Wait for Notepad to be closed
-            const checkNotepadClosed = setInterval(() => {
-                exec('tasklist', (error, stdout, stderr) => {
-                    if (error) {
-                        clearInterval(checkNotepadClosed);
-                        reject(error);
+            // Replace the placeholder IP with the user's IP address
+            let updatedData = data.replace(new RegExp(placeholderIP, 'g'), `http://${userIP}/`);
+
+            // Correct any extra "http://http://" or "http://192.168.1.152//" in the URLs
+            updatedData = updatedData.replace(/http:\/\/http:\/\//g, 'http://').replace(/http:\/\/192\.168\.1\.152\/\//g, 'http://192.168.1.152/');
+
+            // Write the updated content back to the file
+            fs.writeFile(destPath, updatedData, 'utf8', (err) => {
+                if (err) {
+                    console.error(`Failed to update ${destPath}:`, err);
+                    return;
+                }
+                console.log(`IP address in ${fileName} was replaced with http://${userIP}/ and corrected`);
+
+                const destDir = fileName === 'v770first.txt' ? v770Dir : v512Dir;
+                const destFilePath = path.join(destDir, fileName);
+
+                fs.copyFile(destPath, destFilePath, (err) => {
+                    if (err) {
+                        console.error(`Failed to copy ${fileName} into ${destDir} directory:`, err);
                         return;
                     }
+                    console.log(`${fileName} was copied to ${destDir}`);
 
-                    if (!stdout.includes('notepad.exe')) {
-                        clearInterval(checkNotepadClosed);
-                        resolve();
-                    }
+                    const command = `openssl aes-128-cbc -e -in "${destFilePath}" -out first.bin -K 943B13DD87468BA5D9B7A8B899F91803 -iv 66B33FC1373FE506EC2B59FB6B977C82`;
+
+                    exec(command, { cwd: destDir }, (err, stdout, stderr) => {
+                        if (err) {
+                            console.error(`Failed to run openssl command in ${destDir} directory:`, err);
+                            return;
+                        }
+                        console.log(`openssl encryption output (${destDir}): ${stdout}`);
+                        console.error(`openssl encryption error (${destDir}, if any): ${stderr}`);
+                    });
                 });
-            }, 1000); // Check every second if Notepad is closed
+            });
         });
     });
-}
-
-// Function to process the files for a given version
-async function processFiles(version) {
-    const { bin, txt } = paths[version];
-
-    // Create folders if they don't exist
-    createFolder(path.dirname(bin));
-    createFolder(path.dirname(txt));
-
-    try {
-        console.log(`Starting download for ${version}...`);
-        await downloadAndSave(urls[version], bin);
-        console.log(`Downloaded and saved ${version}/first.bin`);
-
-        console.log(`Decrypting ${version}/first.bin...`);
-        decryptFile(bin, txt);
-        console.log(`Decryption complete for ${version}/first.bin`);
-
-        console.log(`Opening ${version}/first.txt in Notepad...`);
-        await openInNotepad(txt);
-        console.log(`Notepad closed for ${version}/first.txt`);
-
-        console.log(`Encrypting ${version}/first.txt...`);
-        encryptFile(txt, bin);
-        console.log(`Encryption complete for ${version}/first.txt`);
-    } catch (error) {
-        console.error(`Error processing files for ${version}:`, error);
-    }
-}
-
-// Process the files for v770
-async function processAllFiles() {
-    await processFiles('v770');
-    await processFiles('v512');
-}
-
-// Start the processing
-processAllFiles();
+});
