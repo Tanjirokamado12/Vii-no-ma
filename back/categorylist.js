@@ -3,9 +3,9 @@ const path = require('path');
 
 // Define input and output file paths
 const inputFilePath = path.join(__dirname, '../files/categorylist.txt');
-const outputFilePath = path.join(__dirname, '../v770/url1/list/category/01.xml');
+const outputDirPath = path.join(__dirname, '../v770/url1/list/category');
 
-// Function to create directories if they don't exist
+// Ensure directories exist before writing the file
 function ensureDirectoryExistence(filePath) {
   const dirname = path.dirname(filePath);
   if (fs.existsSync(dirname)) {
@@ -63,15 +63,18 @@ fs.readFile(inputFilePath, 'utf8', (err, data) => {
 
   xml += '</CategoryList>';
 
-  // Ensure directories exist before writing the file
-  ensureDirectoryExistence(outputFilePath);
+  // Ensure the output directory exists before writing the files
+  ensureDirectoryExistence(outputDirPath);
 
-  // Write the XML to the output file
-  fs.writeFile(outputFilePath, xml, err => {
-    if (err) {
-      console.error('Error writing output file:', err);
-      return;
-    }
-    console.log('XML file generated successfully!');
-  });
+  // Write the XML to the output files
+  for (let i = 1; i <= 3; i++) {
+    const outputFilePath = path.join(outputDirPath, `0${i}.xml`);
+    fs.writeFile(outputFilePath, xml, err => {
+      if (err) {
+        console.error(`Error writing output file ${outputFilePath}:`, err);
+        return;
+      }
+      console.log(`XML file ${outputFilePath} generated successfully!`);
+    });
+  }
 });

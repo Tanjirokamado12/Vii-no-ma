@@ -18,51 +18,38 @@ const sourceMiiDir = path.join(__dirname, '../assets/mii');
 const destMiiDir1 = path.join(__dirname, '../v770/url1/mii');
 const destMiiDir2 = path.join(__dirname, '../v512/url1/mii');
 
+// Rooms
+
 const sourceRoomDir = path.join(__dirname, '../assets/room');
 const destRoomDir1 = path.join(__dirname, '../v770/url1/special');
 const destRoomDir2 = path.join(__dirname, '../v512/url1/special');
 
-// Function to copy .jpg files from source to destination
-function copyJpgFiles(source, destination) {
+const sourceDeliveryDir = path.join(__dirname, '../assets/Delivery');
+const destDeliveryDir1 = path.join(__dirname, '../v770/url1/Delivery');
+const destDeliveryDir2 = path.join(__dirname, '../v512/url1/Delivery');
+
+// Function to copy files with specific extensions from source to destination
+function copyFiles(source, destination, extensions) {
     if (!fs.existsSync(destination)) {
         fs.mkdirSync(destination, { recursive: true });
     }
 
     fs.readdir(source, (err, files) => {
         if (err) {
-            console.error('Error reading source directory:', err);
+            console.error(`Error reading source directory: ${err}`);
             return;
         }
 
         files.forEach(file => {
-            if (path.extname(file).toLowerCase() === '.jpg') {
+            if (extensions.includes(path.extname(file).toLowerCase())) {
                 const sourceFile = path.join(source, file);
                 const destFile = path.join(destination, file);
 
-                fs.copyFileSync(sourceFile, destFile);
-            }
-        });
-    });
-}
-
-// Function to copy .mii files from source to destination
-function copyMiiFiles(source, destination) {
-    if (!fs.existsSync(destination)) {
-        fs.mkdirSync(destination, { recursive: true });
-    }
-
-    fs.readdir(source, (err, files) => {
-        if (err) {
-            console.error('Error reading source directory:', err);
-            return;
-        }
-
-        files.forEach(file => {
-            if (path.extname(file).toLowerCase() === '.mii') {
-                const sourceFile = path.join(source, file);
-                const destFile = path.join(destination, file);
-
-                fs.copyFileSync(sourceFile, destFile);
+                try {
+                    fs.copyFileSync(sourceFile, destFile);
+                } catch (err) {
+                    console.error(`Error copying file ${file}: ${err}`);
+                }
             }
         });
     });
@@ -76,20 +63,20 @@ function copyRoomFiles(source, destination) {
 
     fs.readdir(source, (err, files) => {
         if (err) {
-            console.error('Error reading source directory:', err);
+            console.error(`Error reading source directory: ${err}`);
             return;
         }
 
         files.forEach(file => {
             const sourceFile = path.join(source, file);
             const destDir = path.join(destination, file, 'img');
-            
+
             if (fs.statSync(sourceFile).isDirectory()) {
                 fs.mkdirSync(destDir, { recursive: true });
 
                 fs.readdir(sourceFile, (err, subFiles) => {
                     if (err) {
-                        console.error('Error reading sub-directory:', err);
+                        console.error(`Error reading sub-directory: ${err}`);
                         return;
                     }
 
@@ -97,7 +84,11 @@ function copyRoomFiles(source, destination) {
                         const sourceSubFile = path.join(sourceFile, subFile);
                         const destSubFile = path.join(destDir, subFile);
 
-                        fs.copyFileSync(sourceSubFile, destSubFile);
+                        try {
+                            fs.copyFileSync(sourceSubFile, destSubFile);
+                        } catch (err) {
+                            console.error(`Error copying sub-file ${subFile}: ${err}`);
+                        }
                     });
                 });
             }
@@ -105,18 +96,21 @@ function copyRoomFiles(source, destination) {
     });
 }
 
-// Copy .jpg files to both destination directories for wall
-copyJpgFiles(sourceCategoryDir, categoryDir);
-copyJpgFiles(sourceWallDir, destWallDir1);
-copyJpgFiles(sourceWallDir, destWallDir2);
+// Combine .jpg and .mii file copy tasks using the improved function
+const jpgExtensions = ['.jpg'];
+const miiExtensions = ['.mii'];
 
-// Copy .jpg files to destination directories for pay wall
-copyJpgFiles(sourcePayWallDir, destPayWallDir2);
+copyFiles(sourceCategoryDir, categoryDir, jpgExtensions);
+copyFiles(sourceWallDir, destWallDir1, jpgExtensions);
+copyFiles(sourceWallDir, destWallDir2, jpgExtensions);
+copyFiles(sourcePayWallDir, destPayWallDir2, jpgExtensions);
+copyFiles(sourceMiiDir, destMiiDir1, miiExtensions);
+copyFiles(sourceMiiDir, destMiiDir2, miiExtensions);
 
-// Copy .mii files to destination directories for pay wall
-copyMiiFiles(sourceMiiDir, destMiiDir1);
-copyMiiFiles(sourceMiiDir, destMiiDir2);
-
-// Copy room files to both destination directories preserving the ID of room structure and appending 'img'
+// Copy room files
 copyRoomFiles(sourceRoomDir, destRoomDir1);
 copyRoomFiles(sourceRoomDir, destRoomDir2);
+
+// Copy delivery images
+copyFiles(sourceDeliveryDir, destDeliveryDir1, jpgExtensions);
+copyFiles(sourceDeliveryDir, destDeliveryDir2, jpgExtensions);
