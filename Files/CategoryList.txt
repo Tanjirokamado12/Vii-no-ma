@@ -2,14 +2,20 @@
 place:1
 categid:10000
 name:Music
+sppageid:1
+splinktext:Link Text
 </categinfo_end>
 <categinfo_start>
 place:2
 categid:10001
 name:Music
+sppageid:2
+splinktext:Link Text
 </categinfo_end>
 <categinfo_start>
 place:3
 categid:10002
 name:Music
+sppageid:2
+splinktext:Link Text
 </categinfo_end>

@@ -78,10 +78,13 @@ require('./v512/PosterMeta.js');
 require('./v512/recomd.js');
 require('./v512/sppagelist.js');
 require('./v512/This.js');
-
+require('./PayMoviesMeta.js');
 require('./CategoryMovies.js');
 require('./Movie.js');
 require('./New.js');
+require('./paymovie.js');
+require('./AttrPopularMovies.js');
+require('./Popular.js');
 
 const port = process.env.PORT || 80;
 app.listen(port, () => {

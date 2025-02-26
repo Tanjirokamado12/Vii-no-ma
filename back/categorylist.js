@@ -51,7 +51,7 @@ fs.readFile(inputFilePath, 'utf8', (err, data) => {
   // Create XML structure
   let xml = '<CategoryList>\n';
   xml += '  <ver>1</ver>\n';
-  xml += '  <type>1</type>\n';
+  xml += '  <type>3</type>\n';
 
   categories.forEach(category => {
     xml += '    <categinfo>\n';

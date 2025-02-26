@@ -3,3 +3,5 @@ frameid:2
 color:000000
 Page of News:1
 News:Welcome to Wii Room
+
+We have News
