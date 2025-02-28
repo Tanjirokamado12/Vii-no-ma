@@ -1,0 +1,4 @@
+posterid:1
+frameid:2000
+color:000000
+news:Welcome to wii room
