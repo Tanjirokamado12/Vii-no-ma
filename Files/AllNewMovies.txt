@@ -1,8 +1,0 @@
-<movieinfo>
-rank:1
-movieid:11
-title:Tomdemo Science 1
-genre:0
-strdt:2024-01-01T00:00:00
-pop:0
-</movieinfo>
