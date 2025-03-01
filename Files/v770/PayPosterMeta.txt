@@ -1,2 +1,0 @@
-1, msg1, 1, title1
-2, msg2, 2, title2, theatre
