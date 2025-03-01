@@ -1,0 +1,12 @@
+<movieinfo>
+<rank>1</rank>
+<movieid>1</movieid>
+<title>1</title>
+<kana>12838394</kana>
+<refid>43838083909830984804840384093494</refid>
+<strdt>2000-01-01T00:00:00</strdt>
+<pop>1</pop>
+<released>2024-02-28</released>
+<term>2</term>
+<price>0</price>
+</movieinfo>
