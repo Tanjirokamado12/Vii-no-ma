@@ -1,0 +1,87 @@
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
+const xml2js = require('xml2js');
+const app = express();
+
+// Setting the root directory to the parent directory
+app.use(express.static(path.join(__dirname, '..')));
+
+// Create a write stream (in append mode)
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' });
+
+// Setup the logger to write to a file
+app.use(morgan('combined', { stream: accessLogStream }));
+
+// Enable body parsing
+app.use(bodyParser.json()); // For parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // For parsing application/x-www-form-urlencoded
+app.use(bodyParser.text()); // For parsing text/plain
+
+// Middleware to parse XML
+app.use((req, res, next) => {
+    if (req.is('application/xml')) {
+        let data = '';
+        req.setEncoding('utf8');
+        req.on('data', chunk => {
+            data += chunk;
+        });
+        req.on('end', () => {
+            xml2js.parseString(data, (err, result) => {
+                if (err) {
+                    return res.status(400).send('Invalid XML');
+                }
+                req.body = result;
+                next();
+            });
+        });
+    } else {
+        next();
+    }
+});
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
+// Catch-all POST route to handle any type of POST request
+app.post('*', (req, res) => {
+    res.send(`Received data: ${JSON.stringify(req.body)}`);
+});
+
+// Import content common for all versions
+require('./Movies.js');
+require('./images.js');
+require('./PayMovies.js');
+require('./PayVideos.js');
+
+// Import Content for v770
+require('./v770/Calendar.js');
+require('./v770/PosterMeta.js');
+require('./v770/datetime.js');
+require('./Movies.js');
+require('./images.js');
+require('./PayMovies.js');
+require('./v770/MovieLink.js');
+require('./v770/Event.js');
+require('./v770/LicenseAgree.js');
+require('./v770/PayEvent.js');
+require('./v770/PayPosterMeta.js');
+require('./v770/NewPayMovies.js');
+require('./v770/PayCategoryHeader.js');
+require('./v770/Caldaily.js');
+require('./v770/CategoryList.js');
+require('./v770/CategoryMovies.js');
+require('./v770/MovieMeta.js');
+require('./v770/SpPageList.js');
+require('./v770/SpPagebin.js');
+require('./v770/DeliveryAgree.js');
+require('./v770/CouponAgree.js');
+require('./v770/SpPage.js');
+
+const port = process.env.PORT || 80;
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});

@@ -1,0 +1,69 @@
+start_movieinfo
+seq:1
+movieid:1
+title:Movie 1
+strdt:2025-02-28T09:30:12
+enddt:2035-02-28T09:30:12
+end_movieinfo
+start_movieinfo
+seq:2
+movieid:2
+title:Movie 1
+strdt:2025-02-28T09:30:12
+enddt:2035-02-28T09:30:12
+end_movieinfo
+start_movieinfo
+seq:3
+movieid:3
+title:Movie 3
+strdt:2025-02-28T09:30:12
+enddt:2035-02-28T09:30:12
+end_movieinfo
+
+
+start_trivia
+Tindex:1
+Thead:Test
+tdetail:Test
+timg:0
+timgnum:0
+bgm:1
+end_trivia
+
+start_trivia
+Tindex:2
+Thead:Hello
+tdetail:More trivia details.
+timg:0
+timgnum:0
+bgm:2
+end_trivia
+
+start_trivia
+Tindex:3
+Thead:Hello
+tdetail:More trivia details.
+timg:0
+timgnum:0
+bgm:2
+end_trivia
+
+
+start_trivia
+Tindex:4
+Thead:Hello
+tdetail:More trivia details.
+timg:0
+timgnum:0
+bgm:2
+end_trivia
+
+start_trivia
+Tindex:5
+Thead:Hello
+tdetail:More trivia details.
+timg:0
+timgnum:0
+bgm:2
+end_trivia
+

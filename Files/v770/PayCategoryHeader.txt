@@ -1,0 +1,15 @@
+<listinfo>
+   <place>1</place>
+   <type>1</type>
+   <text>Test</text>
+</listinfo>
+<listinfo>
+   <place>2</place>
+   <type>1</type>
+   <text>Test</text>
+</listinfo>
+<listinfo>
+   <place>3</place>
+   <type>2</type>
+   <text>Test</text>
+</listinfo>
