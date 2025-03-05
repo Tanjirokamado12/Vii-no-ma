@@ -1,0 +1,16 @@
+img:0
+<listinfo>
+  <place>1</place>
+  <type>10</type>
+  <text>1</text>
+</listinfo>
+<listinfo>
+  <place>2</place>
+  <type>20</type>
+  <text>2</text>
+</listinfo>
+<listinfo>
+  <place>3</place>
+  <type>30</type>
+  <text>2</text>
+</listinfo>

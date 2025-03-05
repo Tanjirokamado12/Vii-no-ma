@@ -8,14 +8,14 @@ const userIP = readlineSync.question('Please enter your IP address: ');
 
 console.log(`You entered: ${userIP}`);
 
-const filesToCopy = ['assets/v512first.txt', 'assets/v770first.txt'];
+const filesToCopy = ['assets/v770first.txt', 'assets/v1025first.txt'];
 const placeholderIP = 'ip'; // The placeholder to be replaced
-const v512Dir = path.join(__dirname, 'v512');
 const v770Dir = path.join(__dirname, 'conf');
+const v1025Dir = path.join(__dirname, 'v1025');
 
 // Create directories if they don't exist
-if (!fs.existsSync(v512Dir)) fs.mkdirSync(v512Dir);
 if (!fs.existsSync(v770Dir)) fs.mkdirSync(v770Dir);
+if (!fs.existsSync(v1025Dir)) fs.mkdirSync(v1025Dir);
 
 filesToCopy.forEach(file => {
     const fileName = path.basename(file);
@@ -49,7 +49,13 @@ filesToCopy.forEach(file => {
                 }
                 console.log(`IP address in ${fileName} was replaced with http://${userIP}/ and corrected`);
 
-                const destDir = fileName === 'v770first.txt' ? v770Dir : v512Dir;
+                let destDir;
+                if (fileName === 'v770first.txt') {
+                    destDir = v770Dir;
+                } else if (fileName === 'v1025first.txt') {
+                    destDir = v1025Dir;
+                }
+
                 const destFilePath = path.join(destDir, fileName);
 
                 fs.copyFile(destPath, destFilePath, (err) => {

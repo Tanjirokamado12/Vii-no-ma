@@ -19,7 +19,7 @@ of the command, INCLUDING all the arguments
 you may have used and your OS.\n\n\n\n`);
 
 // Add a version selection prompt
-const versionOptions = ["v0", "v512", "v770"];
+const versionOptions = ["v0", "v512", "v770", "v1025"];
 console.log("Select a version:");
 versionOptions.forEach((version, index) => {
     console.log(`${index + 1}. ${version}`);
@@ -98,7 +98,14 @@ if (platform === 'win32') {
             // Open 00000001.app and modify the content
             const appFilePath = path.join(rootDir, "temp", "00000001.app");
             const appFileBuffer = fs.readFileSync(appFilePath);
-            const searchUrl = selectedVersion === "v770" ? "https://a248.e.akamai.net/f/248/81607/7d/wmp1v2.wapp.wii.com/" : "https://a248.e.akamai.net/f/248/70236/7d/wmp1.wapp.wii.com/";
+            let searchUrl;
+            if (selectedVersion === "v770") {
+                searchUrl = "https://a248.e.akamai.net/f/248/81607/7d/wmp1v2.wapp.wii.com/";
+            } else if (selectedVersion === "v1025") {
+                searchUrl = "https://a248.e.akamai.net/f/248/93025/7d/wmp3v2.wapp.wii.com/";
+            } else {
+                searchUrl = "https://a248.e.akamai.net/f/248/70236/7d/wmp1.wapp.wii.com/";
+            }
             
             // Modify the URL
             let index = appFileBuffer.indexOf(searchUrl);
@@ -108,6 +115,19 @@ if (platform === 'win32') {
                 console.log("Modified the URL in 00000001.app successfully.");
             } else {
                 console.log("URL not found in 00000001.app.");
+            }
+            
+            // Find and replace 'https://wmp2v3.wapp.wii.com/conf/first.bin' with 'http://$ip/v1025/first.bin'
+            const specificUrl = "https://wmp2v3.wapp.wii.com/conf/first.bin";
+            index = appFileBuffer.indexOf(specificUrl);
+            if (index !== -1) {
+                const newUrl = `http://${ipAddress}v1025/first.bin`;
+                const paddedUrl = newUrl + '\0'.repeat(specificUrl.length - newUrl.length);
+                const replacementBuffer = Buffer.from(paddedUrl, 'ascii');
+                replacementBuffer.copy(appFileBuffer, index, 0, replacementBuffer.length);
+                console.log("Modified 'https://wmp2v3.wapp.wii.com/conf/first.bin' to 'http://${ipAddress}v1025/first.bin'.");
+            } else {
+                console.log("'https://wmp2v3.wapp.wii.com/conf/first.bin' not found in 00000001.app.");
             }
 
             // Change .img to .jpg
