@@ -5,28 +5,27 @@ movieid:1
 title:tile
 genre:1
 pop:0
+
 rank:2
 movieid:2
 title:tile
-genre:2
+genre:1
 pop:0
+
 rank:3
 movieid:3
 title:tile
-genre:3
+genre:1
 pop:0
+
 rank:4
 movieid:4
 title:tile
-genre:4
+genre:1
 pop:0
+
 rank:5
 movieid:5
-title:tile
-genre:5
-pop:0
-rank:6
-movieid:6
 title:tile
 genre:1
 pop:0
@@ -34,159 +33,205 @@ pop:0
 categid:10001
 
 rank:1
-movieid:1
+movieid:6
 title:tile
 genre:1
 pop:0
 
 rank:2
-movieid:2
+movieid:7
 title:tile
-genre:2
+genre:1
 pop:0
+
 
 rank:3
-movieid:3
+movieid:8
 title:tile
-genre:3
+genre:1
 pop:0
 
+
 rank:4
-movieid:4
+movieid:9
 title:tile
-genre:4
+genre:1
 pop:0
 
 rank:5
-movieid:5
+movieid:10
 title:tile
-genre:5
+genre:1
+pop:0
+
+
+rank:6
+movieid:11
+title:tile
+genre:1
 pop:0
 
 categid:10002
 
 rank:1
-movieid:1
+movieid:12
 title:tile
 genre:1
 pop:0
 
 rank:2
-movieid:2
+movieid:13
 title:tile
-genre:2
+genre:1
 pop:0
 
 rank:3
-movieid:3
+movieid:12
 title:tile
-genre:3
+genre:1
 pop:0
 
 rank:4
-movieid:4
+movieid:14
 title:tile
-genre:4
+genre:1
 pop:0
 
 rank:5
-movieid:5
+movieid:15
 title:tile
-genre:5
+genre:1
 pop:0
+
+rank:6
+movieid:16
+title:tile
+genre:1
+pop:0
+
+rank:7
+movieid:17
+title:tile
+genre:1
+pop:0
+
 
 categid:10003
-
 rank:1
-movieid:1
+movieid:18
 title:tile
 genre:1
 pop:0
 
 rank:2
-movieid:2
+movieid:19
 title:tile
-genre:2
+genre:1
 pop:0
 
 rank:3
-movieid:3
+movieid:20
 title:tile
-genre:3
+genre:1
 pop:0
 
 rank:4
-movieid:4
+movieid:21
 title:tile
-genre:4
+genre:1
 pop:0
 
 rank:5
-movieid:5
+movieid:22
 title:tile
-genre:5
+genre:1
 pop:0
+
+rank:6
+movieid:23
+title:tile
+genre:1
+pop:0
+
+rank:7
+movieid:24
+title:tile
+genre:1
+pop:0
+
 
 categid:10004
-
 rank:1
-movieid:1
+movieid:25
 title:tile
 genre:1
 pop:0
 
 rank:2
-movieid:2
+movieid:26
 title:tile
-genre:2
+genre:1
 pop:0
 
 rank:3
-movieid:3
+movieid:27
 title:tile
-genre:3
+genre:1
 pop:0
 
 rank:4
-movieid:4
+movieid:28
 title:tile
-genre:4
+genre:1
 pop:0
 
 rank:5
-movieid:5
+movieid:29
 title:tile
-genre:5
+genre:1
 pop:0
+
+rank:6
+movieid:30
+title:tile
+genre:1
+pop:0
+
+rank:7
+movieid:31
+title:tile
+genre:1
+pop:0
+
 
 categid:10005
 
 rank:1
-movieid:1
+movieid:32
 title:tile
 genre:1
 pop:0
 
 rank:2
-movieid:2
+movieid:33
 title:tile
-genre:2
+genre:1
 pop:0
 
 rank:3
-movieid:3
+movieid:34
 title:tile
-genre:3
+genre:1
 pop:0
 
 rank:4
-movieid:4
+movieid:35
 title:tile
-genre:4
+genre:1
 pop:0
 
 rank:5
-movieid:5
+movieid:36
 title:tile
-genre:5
+genre:1
 pop:0
