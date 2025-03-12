@@ -3,18 +3,16 @@ const path = require('path');
 
 // Define the XML content
 const xmlContent = `
-<Delivery>
-<wiiid></wiiid>
-<smpid></smpid>
-<mail></mail>
-<code>1</code>
-<msg>Hi</msg>
-</Delivery>
+<SampleRequest>
+  <ver>1</ver>
+  <code>1</code>
+  <msg>Vote recorded.</msg>
+</SampleRequest>
 `;
 
 // Define the target directory and file path
-const targetPath = path.join(__dirname, '../../v770/url2');
-const targetFile = path.join(targetPath, 'smp.cgi');
+const targetPath = path.join(__dirname, '../../v770/url1/beacon');
+const targetFile = path.join(targetPath, '01');
 
 // Function to create directories if they don't exist
 const createDirectoryIfNotExists = (directory) => {
@@ -33,3 +31,4 @@ createDirectoryIfNotExists(targetPath);
 
 // Write the XML content to the target file
 writeXMLToFile(targetFile, xmlContent);
+

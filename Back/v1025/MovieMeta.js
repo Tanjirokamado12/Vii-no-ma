@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const readline = require('readline');
 
 // Define the output file paths
@@ -11,9 +12,9 @@ const outputFilePaths = [
   'c1/31.met', '63/32.met', '18/33.met', 'e3/34.met', '1c/35.met', '19/36.met'
 ];
 
-const basePath = '../v770/url1/movie/';
+const basePath = '../v1025/url1/movie/';
 
-const fileStream = fs.createReadStream('../files/v770/categorymovies.txt');
+const fileStream = fs.createReadStream('../files/v1025/categorymovies.txt');
 const rl = readline.createInterface({
   input: fileStream,
   crlfDelay: Infinity
@@ -28,7 +29,6 @@ const createMovieMeta = (movieid, title, genre) => {
   <len>00:03:11</len>
   <aspect>1</aspect>
   <genre>${genre}</genre>
-  <sppageid>0</sppageid>
   <dsdist>0</dsdist>
   <staff>0</staff>
 </MovieMeta>`;
@@ -51,8 +51,8 @@ const processFile = async () => {
         if (movieid && title && genre && !processedMovieIds.has(movieid)) {
           if (lineIndex < outputFilePaths.length) {
             const movieMeta = createMovieMeta(movieid, title, genre);
-            const outputFilePath = basePath + outputFilePaths[lineIndex];
-            const outputDir = outputFilePath.split('/').slice(0, -1).join('/');
+            const outputFilePath = path.join(basePath, outputFilePaths[lineIndex]);
+            const outputDir = path.dirname(outputFilePath);
 
             fs.mkdirSync(outputDir, { recursive: true });
             fs.writeFileSync(outputFilePath, movieMeta);

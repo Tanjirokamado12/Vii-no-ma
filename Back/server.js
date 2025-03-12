@@ -27,9 +27,12 @@ require('./Movies.js');
 require('./images.js');
 require('./PayMovies.js');
 require('./PayVideos.js');
+require('./v1025images.js');
+require('./v1025Movies.js');
 
 // Import Content for v770
 require('./v770/Calendar.js');
+require('./v770/MiiInfo.js');
 require('./v770/PosterMeta.js');
 require('./v770/datetime.js');
 require('./Movies.js');
@@ -53,6 +56,27 @@ require('./v770/CouponAgree.js');
 require('./v770/SpPage.js');
 require('./v770/Delivery.js');
 require('./v770/PicEval.js');
+require('./v770/SampleRequest.js');
+
+
+// Import Content for v1025
+require('./v1025/Event.js');
+require('./v1025/MovieLink.js');
+require('./v1025/PayEvent.js');
+require('./v1025/RegionInfo.js');
+require('./v1025/SpPageBin.js');
+require('./v1025/SpPageList.js');
+require('./v1025/PosterMeta.js');
+require('./v1025/PayPosterMeta.js');
+require('./v1025/LicenseAgree.js');
+require('./v1025/MiiInfo.js');
+require('./v1025/SampleRequest.js');
+require('./v1025/CategoryList.js');
+require('./v1025/CategoryMovies.js');
+require('./v1025/MovieMeta.js');
+require('./v1025/PayCategoryHeader.js');
+require('./v1025/RelatedMovies.js');
+require('./v1025/SpPage.js');
 
 // Serve static files from the '..' directory
 app.use(express.static('..'));

@@ -12,7 +12,7 @@ let xmlContent = xmlBuilder.create('SpPageBin')
 xmlContent = xmlContent.replace(/^<\?xml.*?\?>\n/, '');
 
 // Define the target file path
-const targetFilePath = path.join(__dirname, '../../v770/url1/special/allbin.xml');
+const targetFilePath = path.join(__dirname, '../../v1025/url1/special/allbin.xml');
 
 // Ensure the target directory exists
 const targetDir = path.dirname(targetFilePath);
@@ -22,3 +22,5 @@ if (!fs.existsSync(targetDir)) {
 
 // Write the XML content to the file
 fs.writeFileSync(targetFilePath, xmlContent, 'utf-8');
+
+

@@ -32,6 +32,13 @@ const readDataFromFile = (filePath) => {
 const generateXML = (data) => {
   const builder = new xml2js.Builder({ headless: true });
   const currentDate = new Date().toISOString().replace(/\.\d{3}Z$/, '');
+
+  // Add <valid> and <pref> elements to each company section
+  data.forEach(company => {
+    company.valid = '1';
+    company.pref = '11111111111111111111111111111111111111111111111';
+  });
+
   return builder.buildObject({
     SpPageList: {
       ver: 1,
@@ -63,8 +70,8 @@ const saveXMLToFile = (filePath, xml) => {
 // Main function
 const main = async () => {
   try {
-    const dataFilePath = path.resolve(__dirname, '../../files/v770/SpPageList.txt');
-    const xmlFilePath = path.resolve(__dirname, '../../v770/url1/special/all.xml');
+    const dataFilePath = path.resolve(__dirname, '../../files/v1025/SpPageList.txt');
+    const xmlFilePath = path.resolve(__dirname, '../../v1025/url1/special/all.xml');
 
     // Read data from file
     const data = await readDataFromFile(dataFilePath);

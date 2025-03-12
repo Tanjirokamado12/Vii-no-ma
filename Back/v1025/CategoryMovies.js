@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const inputFilePath = path.join(__dirname, '../../files/v770/categoryMovies.txt');
-const outputDir = path.join(__dirname, '../../v770/url1/list/category/search');
+const inputFilePath = path.join(__dirname, '../../files/v1025/categoryMovies.txt');
+const outputDir = path.join(__dirname, '../../v1025/url1/list/category/search');
 const outputFileListPath = path.join(outputDir, 'outputFileList.txt');
 
 // Ensure output directory exists
@@ -87,6 +87,6 @@ fs.readFile(inputFilePath, 'utf8', (err, data) => {
         if (err) {
             console.error('Error writing output file list:', err);
         } else {
-			}
+        }
     });
 });

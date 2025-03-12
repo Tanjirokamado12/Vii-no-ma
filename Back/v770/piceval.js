@@ -31,5 +31,3 @@ createDirectoryIfNotExists(targetPath);
 
 // Write the XML content to the target file
 writeXMLToFile(targetFile, xmlContent);
-
-console.log('XML content generated and saved to', targetFile);

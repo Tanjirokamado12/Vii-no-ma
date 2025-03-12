@@ -3,7 +3,7 @@ const path = require('path');
 
 const sourceDir = path.join(__dirname, '../assets/movies');
 const destinationDirs = [
-  '../v770/url1/movie',
+  '../v1025/url1/movie',
 ];
 
 const fileNames = [

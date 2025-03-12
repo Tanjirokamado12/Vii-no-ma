@@ -119,10 +119,10 @@ function generateXml(spPage) {
   return xmlContent;
 }
 
-const spPageFilePath = path.join(__dirname, '../../files/v770/sppage.txt');
+const spPageFilePath = path.join(__dirname, '../../files/v1025/sppage.txt');
 const spPages = parseSpPageFile(spPageFilePath);
 
-const directoryPath = path.join(__dirname, '../../v770/url1/special');
+const directoryPath = path.join(__dirname, '../../v1025/url1/special');
 
 createDirectoryIfNotExists(directoryPath);
 

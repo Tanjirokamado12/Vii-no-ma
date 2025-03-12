@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 
 const ensureDirectoryExists = (dir, callback) => {
-    console.log(`Ensuring directory exists: ${dir}`);
     fs.mkdir(dir, { recursive: true }, (err) => {
         if (err) {
             console.error(`Error creating directory ${dir}: ${err.message}`);
@@ -14,7 +13,6 @@ const ensureDirectoryExists = (dir, callback) => {
 
 const copyFiles = (sourceDir, targetDir, callback) => {
     ensureDirectoryExists(targetDir, () => {
-        console.log(`Copying files from ${sourceDir} to ${targetDir}`);
         fs.readdir(sourceDir, (err, files) => {
             if (err) {
                 console.error(`Error reading source directory: ${err.message}`);
@@ -32,7 +30,6 @@ const copyFiles = (sourceDir, targetDir, callback) => {
                         if (err) {
                             console.error(`Error copying file ${file} to ${targetPathH}: ${err.message}`);
                         } else {
-                            console.log(`Copied ${file} to ${targetPathH}`);
                         }
                     });
 
@@ -42,7 +39,6 @@ const copyFiles = (sourceDir, targetDir, callback) => {
                         if (err) {
                             console.error(`Error copying file ${file} to ${targetPathL}: ${err.message}`);
                         } else {
-                            console.log(`Copied ${file} to ${targetPathL}`);
                         }
                     });
 
@@ -81,7 +77,6 @@ const copyFiles = (sourceDir, targetDir, callback) => {
 
 // Rename files in the wall and intro directories
 const renameFiles = (targetDir, introMovieID, callback, isWall = false, isIntro = false) => {
-    console.log(`Renaming files in ${targetDir}`);
     fs.readdir(targetDir, (err, files) => {
         if (err) {
             console.error(`Error reading target directory: ${err.message}`);
@@ -101,7 +96,6 @@ const renameFiles = (targetDir, introMovieID, callback, isWall = false, isIntro 
                     if (err) {
                         console.error(`Error renaming file ${file}: ${err.message}`);
                     } else {
-                        console.log(`Renamed ${file} to ${newFileName}`);
                     }
                     renameCount++;
                     if (renameCount === files.filter(f => path.extname(f) === '.mov').length) {
@@ -135,14 +129,12 @@ fs.readFile(payeventFilePath, 'utf8', (err, data) => {
     const introMovieID = data.match(/IntroMovieID:(\d+)/);
     if (introMovieID && introMovieID[1]) {
         const movieID = introMovieID[1];
-        console.log(`Loaded IntroMovieID: ${movieID}`);
 
         // Copy and rename files
         copyFiles(assetsPayWallDir, v770Url3PayWallDir, () => {
             renameFiles(v770Url3PayWallDir, movieID, () => {
                 copyFiles(assetsPayIntroDir, v770Url3PayIntroDir, () => {
                     renameFiles(v770Url3PayIntroDir, movieID, () => {
-                        console.log('All operations completed.');
                     }, false, true);
                 });
             }, true);

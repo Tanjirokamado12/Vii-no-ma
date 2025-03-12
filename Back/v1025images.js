@@ -53,16 +53,18 @@ const miiSourceDir = path.join(__dirname, '../assets/mii');
 const deliverySourceDir = path.join(__dirname, '../assets/delivery');
 const LinkSourceDir = path.join(__dirname, '../assets/urllink');
 const PictureSourceDir = path.join(__dirname, '../assets/picture');
+const IntroSourceDir = path.join(__dirname, '../assets/Intro');
 
-const roomTargetDir = path.join(__dirname, '../v770/url1/special');
-const miiTargetDir = path.join(__dirname, '../v770/url1/mii');
-const deliveryTargetDir = path.join(__dirname, '../v770/url1/delivery');
-const wallTargetDirs = [path.join(__dirname, '../v770/url1/wall')];
-const couponTargetDir = path.join(__dirname, '../v770/url1/coupon');
-const PictureTargetDir = path.join(__dirname, '../v770/url1/picture');
-const LinkTargetDir = path.join(__dirname, '../v770/url1/urllink');
-const categoryTargetDirs = [path.join(__dirname, '../v770/url1/list/category/img')];
-const payWallTargetDirs = [path.join(__dirname, '../v770/url3/pay/wall')];
+const roomTargetDir = path.join(__dirname, '../v1025/url1/special');
+const miiTargetDir = path.join(__dirname, '../v1025/url1/mii');
+const deliveryTargetDir = path.join(__dirname, '../v1025/url1/delivery');
+const wallTargetDirs = [path.join(__dirname, '../v1025/url1/wall')];
+const couponTargetDir = path.join(__dirname, '../v1025/url1/coupon');
+const PictureTargetDir = path.join(__dirname, '../v1025/url1/picture');
+const LinkTargetDir = path.join(__dirname, '../v1025/url1/urllink');
+const categoryTargetDirs = [path.join(__dirname, '../v1025/url1/list/category/img')];
+const payWallTargetDirs = [path.join(__dirname, '../v1025/url3/pay/wall')];
+const IntroTargetDir = path.join(__dirname, '../v1025/url1/intro');
 
 // Copy files
 copyFiles(wallSourceDir, wallTargetDirs);
@@ -72,6 +74,6 @@ copyFilesRecursively(roomSourceDir, roomTargetDir);
 copyFiles(miiSourceDir, [miiTargetDir]);
 copyFiles(couponSourceDir, [couponTargetDir]);
 copyFiles(deliverySourceDir, [deliveryTargetDir]);
-
 copyFiles(PictureSourceDir, [PictureTargetDir]);
+copyFiles(IntroSourceDir, [IntroTargetDir]);
 copyFiles(LinkSourceDir, [LinkTargetDir]);
