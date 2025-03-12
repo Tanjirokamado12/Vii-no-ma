@@ -74,5 +74,3 @@ if (xml.startsWith('<?xml')) {
 
 // Save the XML to the output file
 fs.writeFileSync(outputFilePath, xml);
-
-console.log('XML file successfully generated at:', outputFilePath);

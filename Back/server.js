@@ -29,6 +29,9 @@ require('./PayMovies.js');
 require('./PayVideos.js');
 require('./v1025images.js');
 require('./v1025Movies.js');
+require('./v512images.js');
+require('./v512Movies.js');
+
 
 // Import Content for v770
 require('./v770/Calendar.js');
@@ -77,6 +80,20 @@ require('./v1025/MovieMeta.js');
 require('./v1025/PayCategoryHeader.js');
 require('./v1025/RelatedMovies.js');
 require('./v1025/SpPage.js');
+
+// Import Content for v512
+require('./v512/Event.js');
+require('./v512/Calendar.js');
+require('./v512/PosterMeta.js');
+require('./v512/GenrePopularMovies.js');
+require('./v512/AllPopularMovies.js');
+require('./v512/GenreNewMovies.js');
+require('./v512/AllNewMovies.js');
+require('./v512/RecomdMovies.js');
+require('./v512/Caldaily.js');
+require('./v512/LicenseAgree.js');
+require('./v512/MovieMeta.js');
+
 
 // Serve static files from the '..' directory
 app.use(express.static('..'));
