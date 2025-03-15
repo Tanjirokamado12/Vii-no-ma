@@ -86,6 +86,7 @@ require('./v1025/DeliveryAgree.js');
 require('./v1025/CouponAgree.js');
 require('./v1025/PicEval.js');
 require('./v1025/Enquete.js');
+require('./v1025/PayPosterMeta.js');
 
 // Serve static files from the '..' directory
 app.use(express.static('..'));
