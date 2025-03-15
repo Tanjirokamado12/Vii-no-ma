@@ -1,0 +1,17 @@
+posterid:1
+  <miiinfo>
+    <eq>1</seq>
+    <miiid>2</miiid>
+  </miiinfo>
+frameid:2000
+color:000000
+news:Welcome Back To Wii Room
+  <introinfo>
+    <seq>1</seq>
+    <cntid>1</cntid>
+    <cnttype>1</cnttype>
+    <random>0</random>
+    <linktype>0</linktype>
+    <dispsec>5</dispsec>
+    <dimg>1</dimg>
+  </introinfo>
