@@ -1,0 +1,16 @@
+// Mii Info 1
+
+Miiid:1
+color1:000000
+color2:000000
+prof:test
+name:test
+
+msg:Dialog
+msg:Dialog
+msg:Dialog
+msg:Dialog
+msg:Dialog
+msg:Dialog
+msg:Dialog
+movieid:1
