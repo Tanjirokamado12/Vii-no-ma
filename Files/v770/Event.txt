@@ -1,0 +1,10 @@
+posterid:1
+miiid:1
+miiid:2
+miiid:3
+miiid:4
+miiid:5
+miiid:6
+frameid:2000
+color:000000
+news:Welcome Back To Wii Room
