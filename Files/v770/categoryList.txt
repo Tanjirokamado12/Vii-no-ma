@@ -1,0 +1,43 @@
+<categinfo>
+   <place>1</place>
+   <categid>10000</categid>
+   <name>Test</name>
+         <sppageid>1</sppageid>
+      <splinktext>Test</splinktext>
+</categinfo>
+<categinfo>
+   <place>2</place>
+   <categid>10001</categid>
+   <name>Test</name>
+         <sppageid>1</sppageid>
+      <splinktext>Test</splinktext>
+</categinfo>
+<categinfo>
+   <place>3</place>
+   <categid>10002</categid>
+   <name>Test</name>
+      <sppageid>1</sppageid>
+      <splinktext>Test</splinktext>
+</categinfo>
+<categinfo>
+   <place>4</place>
+   <categid>10003</categid>
+   <name>Test</name>
+      <sppageid>1</sppageid>
+      <splinktext>Test</splinktext>
+</categinfo>
+<categinfo>
+   <place>5</place>
+   <categid>10004</categid>
+   <name>Test</name>
+      <sppageid>1</sppageid>
+      <splinktext>Test</splinktext>
+</categinfo>
+<categinfo>
+   <place>6</place>
+   <categid>10005</categid>
+   <name>Test</name>
+      <sppageid>1</sppageid>
+      <splinktext>Test</splinktext>
+</categinfo>
+

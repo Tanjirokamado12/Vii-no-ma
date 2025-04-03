@@ -1,0 +1,50 @@
+{
+  "name": "Vii-no-ma-main",
+  "dependencies": {
+    "body-parser": {
+      "version": "1.20.3",
+      "resolved": "https://registry.npmjs.org/body-parser/-/body-parser-1.20.3.tgz",
+      "overridden": false
+    },
+    "express": {
+      "version": "4.21.2",
+      "resolved": "https://registry.npmjs.org/express/-/express-4.21.2.tgz",
+      "overridden": false
+    },
+    "fs-extra": {
+      "version": "11.3.0",
+      "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-11.3.0.tgz",
+      "overridden": false
+    },
+    "morgan": {
+      "version": "1.10.0",
+      "resolved": "https://registry.npmjs.org/morgan/-/morgan-1.10.0.tgz",
+      "overridden": false
+    },
+    "multer": {
+      "version": "1.4.5-lts.1",
+      "resolved": "https://registry.npmjs.org/multer/-/multer-1.4.5-lts.1.tgz",
+      "overridden": false
+    },
+    "readline-sync": {
+      "version": "1.4.10",
+      "resolved": "https://registry.npmjs.org/readline-sync/-/readline-sync-1.4.10.tgz",
+      "overridden": false
+    },
+    "xml2js": {
+      "version": "0.6.2",
+      "resolved": "https://registry.npmjs.org/xml2js/-/xml2js-0.6.2.tgz",
+      "overridden": false
+    },
+    "xmlbuilder": {
+      "version": "15.1.1",
+      "resolved": "https://registry.npmjs.org/xmlbuilder/-/xmlbuilder-15.1.1.tgz",
+      "overridden": false
+    },
+    "xmlbuilder2": {
+      "version": "3.1.1",
+      "resolved": "https://registry.npmjs.org/xmlbuilder2/-/xmlbuilder2-3.1.1.tgz",
+      "overridden": false
+    }
+  }
+}
