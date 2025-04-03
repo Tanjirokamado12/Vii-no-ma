@@ -1,9 +1,0 @@
-// Movie Info
-Movieid:1
-title:test
-
-
-//trivia detail
-thead:hi
-tdetail:hi2
-tbgm:4

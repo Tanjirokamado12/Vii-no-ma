@@ -1,9 +1,0 @@
-posterid:1
-msg:msg1
-movieid:1
-title:title1
-
-posterid:2000
-msg:msg2
-movieid:2
-title:title2
