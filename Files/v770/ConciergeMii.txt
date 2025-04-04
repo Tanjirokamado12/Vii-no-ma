@@ -1,0 +1,101 @@
+// Mii Info 1
+
+Miiid:1
+color1:000000
+color2:000000
+prof:test
+name:test
+
+msg:Dialog 1
+msg:Dialog 2
+msg:Dialog 3
+msg:Dialog 4
+msg:Dialog 5
+msg:Dialog 6
+msg:Dialog 7
+movieid:1
+
+// Mii Info 2
+
+Miiid:2
+color1:000000
+color2:000000
+prof:test
+name:test
+
+msg:Dialog 1
+msg:Dialog 2
+msg:Dialog 3
+msg:Dialog 4
+msg:Dialog 5
+msg:Dialog 6
+msg:Dialog 7
+movieid:1
+
+// Mii Info 3
+
+Miiid:3
+color1:000000
+color2:000000
+prof:test
+name:test
+
+msg:Dialog 1
+msg:Dialog 2
+msg:Dialog 3
+msg:Dialog 4
+msg:Dialog 5
+msg:Dialog 6
+msg:Dialog 7
+movieid:1
+
+// Mii Info 4
+
+Miiid:4
+color1:000000
+color2:000000
+prof:test
+name:test
+
+msg:Dialog 1
+msg:Dialog 2
+msg:Dialog 3
+msg:Dialog 4
+msg:Dialog 5
+msg:Dialog 6
+msg:Dialog 7
+movieid:1
+
+// Mii Info 5
+
+Miiid:5
+color1:000000
+color2:000000
+prof:test
+name:test
+
+msg:Dialog 1
+msg:Dialog 2
+msg:Dialog 3
+msg:Dialog 4
+msg:Dialog 5
+msg:Dialog 6
+msg:Dialog 7
+movieid:1
+
+// Mii Info 6
+
+Miiid:6
+color1:000000
+color2:000000
+prof:test
+name:test
+
+msg:Dialog 1
+msg:Dialog 2
+msg:Dialog 3
+msg:Dialog 4
+msg:Dialog 5
+msg:Dialog 6
+msg:Dialog 7
+movieid:1

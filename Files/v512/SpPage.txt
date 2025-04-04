@@ -1,0 +1,39 @@
+//Page 1
+<SpPage>
+sppageid:1
+strdt:2020-01-01T00:00:00
+enddt:2035-01-01T00:00:00
+name:Test
+stopflag:0
+level:1
+bgm:2
+mascot:0
+contact:1
+inmsg:hi
+miiid:1
+color1:000000
+color2:000000
+msg:hi
+  <menu>
+  <place>1</place>  
+  <mnstrdt>2009-04-23T16:30:00</mnstrdt>
+  <mnenddt>2039-04-23T16:30:00</mnenddt>
+  <type>3</type>  
+  <imageid>C0000</imageid> 
+  <mov>
+  <movieid>1</movieid>  
+  <title>Test Movie</title>
+</mov>
+</menu>
+  <menu>
+  <place>2</place>  
+  <mnstrdt>2009-04-23T16:30:00</mnstrdt>
+  <mnenddt>2039-04-23T16:30:00</mnenddt>
+  <type>1</type>  
+  <imageid>A0000</imageid> 
+  <smp>
+  <smpid>1</smpid>  
+  <smptitle>Test smpie</smptitle>
+  <smpurl>http://127.0.0.1/smp.cgi</smpurl>
+</smp>
+</menu>
