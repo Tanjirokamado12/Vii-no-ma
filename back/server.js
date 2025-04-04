@@ -114,8 +114,6 @@ require('./v512/GenreNewMovies.js');
 require('./v512/AllNewMovies.js');
 require('./v512/RecomdMovies.js');
 require('./v512/Caldaily.js');
-require('./v512images.js');
-require('./v512Movies.js');
 require('./v512/LicenseAgree.js');
 require('./v512/SearchMovies.js');
 require('./v512/SpPageList.js');
