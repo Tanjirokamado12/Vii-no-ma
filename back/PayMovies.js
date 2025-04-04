@@ -60,7 +60,7 @@ async function copyFiles() {
         const destinationFile = path.join(__dirname, destination, outputFiles[i]);
 
         // Debug logs for paths
-        console.log(`Copying from ${sourceFile} to ${destinationFile}`);
+       (`Copying from ${sourceFile} to ${destinationFile}`);
 
         // Check if the source file exists
         if (!fs.existsSync(sourceFile)) {
