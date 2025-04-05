@@ -5,6 +5,7 @@ If cnttype is a 0,Wii Room Will Load a Movie,if cnttype is a 1,is load image and
 and for image name is should be cntid-1.jpg and should be moved into /assets/intro/ and for cntid as 16 numbers is should be saved as 16 numbers.mov (for example 3883888899990000.mov) and moved to /assets/Intro/
 
 And for Get Different and Multiple Intro:cntid and seq should be different
+And Seq Should be Following (for example first introinfo seq is a one and the second introinfo seq is a two)
 
 For Linkid:is should be
 For Linktype 1:A Movie theatre ID
