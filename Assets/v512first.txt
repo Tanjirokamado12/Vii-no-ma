@@ -1,0 +1,8 @@
+<Config>
+  <ver>1</ver>
+  <maint>0</maint>
+  <url1>http://ip/v512/url1/</url1>
+  <url2>http://ip/v512/url2/</url2>
+  <eulaver>1</eulaver>
+  <upddt>2009-04-23T16:30:00</upddt>
+</Config>
