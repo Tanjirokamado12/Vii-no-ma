@@ -1,8 +1,0 @@
-Deliveryid:1
-agree:Agree Please
-Deliveryid:2
-agree:Agree Please
-Deliveryid:3
-agree:Agree Please
-Deliveryid:4
-agree:Agree Please
