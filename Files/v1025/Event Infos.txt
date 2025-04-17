@@ -40,7 +40,7 @@ LinkType 1:Load A Movie Theatre
 
 For Image:
     <introinfo>
-    <seq>2</seq>
+    <seq>3</seq>
     <cntid>20</cntid>
     <cnttype>1</cnttype>
     <random>0</random>
@@ -52,7 +52,7 @@ For Image:
   
 For Video:
     <introinfo>
-    <seq>3</seq>
+    <seq>4</seq>
     <cntid>0000000000000000</cntid>
     <cnttype>0</cnttype>
     <random>1</random>
