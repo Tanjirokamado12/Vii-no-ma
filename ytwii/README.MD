@@ -71,4 +71,4 @@ And do that for
 
 -apiplayer-vflZLm5Vu.swf
 
-After you can save it And is Patched
+After you can save it And is Patched (if you have a issue,you can go to https://discord.gg/K8z8rzWnvt for help,i try to respond as soon as i can)
