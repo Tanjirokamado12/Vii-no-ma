@@ -51,8 +51,11 @@ And for End Wad Patch,is required to patch the wad with wimmifi patcher
 From ytwii of this repo,open on JPEXS
 
 -Leanbacklite_wii.swf
+
 -apiplayer.swf
+
 -apiplayer-vflZLm5Vu.swf
+
 -leanback_ajax (should be opened on a Text Editor)
 
 Operation to do with all swf files
@@ -63,7 +66,9 @@ Remplace with your ip
 
 And do that for 
 -Leanbacklite_wii.swf
+
 -apiplayer.swf
+
 -apiplayer-vflZLm5Vu.swf
 
 After you can save it And is Patched
