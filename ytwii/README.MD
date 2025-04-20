@@ -71,4 +71,6 @@ And do that for
 
 -apiplayer-vflZLm5Vu.swf
 
+And Open Leanback_ajax and switch 192.168.1.18 to your ip
+
 After you can save it And is Patched (if you have a issue,you can go to https://discord.gg/K8z8rzWnvt for help,i try to respond as soon as i can)
