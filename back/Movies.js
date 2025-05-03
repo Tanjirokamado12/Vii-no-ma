@@ -1,17 +1,12 @@
 const fs = require('fs-extra');
 const path = require('path');
 
-// Define the source directory
-const sourceDir = path.join(__dirname, '../assets/movies');
-
-// Consolidate all destination directories into one array
 const destinationDirs = [
   '../v770/url1/movie',
-  '../v512/url1/movie',
-  '../v1025/url1/movie'
+  '../v1025/url1/movie', // Added new directory
 ];
 
-// File names to process
+
 const fileNames = [
   'c4/1',
   'c8/2',
@@ -48,76 +43,43 @@ const fileNames = [
   '18/33',
   'e3/34',
   '1c/35',
-  '19/36',
-  'a5/37',
-  'a5/38',
-  'd6/39',
-  'd6/40',
-  '34/41',
-  'a1/42',
-  '17/43',
-  'f7/44',
-  '6c/45',
-  'd9/46',
-  '67/47',
-  '64/48',
-  'f4/49',
-  'c0/50',
-  '28/51',
-  '9a/52',
-  'd8/53',
-  'a6/54',
-  'b5/55',
-  '9f/56',
-  '72/57',
-  '66/58',
-  '09/59',
-  '07/60',
-  '7f/61',
-  '44/62',
-  '03/63',
-  'ea/64',
-  'fc/65',
-  '32/66',
-  '73/67',
-  'a3/68',
-  '14/69',
-  '7c/70',
-  'e2/71',
-  '32/72',
+  '19/36'
 ];
-
-// Helper function to process file copying
-async function copyFiles(sourceFile, destinationDir, subDir, file, suffix) {
-  const destinationFile = path.join(__dirname, destinationDir, subDir, `${file}${suffix}`);
-  await fs.ensureDir(path.dirname(destinationFile));
-  await fs.copy(sourceFile, destinationFile);
-}
 
 async function copyAndRenameMovies() {
   try {
     for (const fileName of fileNames) {
       const [subDir, file] = fileName.split('/');
-      const sourceFile = path.join(sourceDir, `${file}.mov`);
+      const sourceFile = path.join(sourceDir, `${file}.mo`);
       const sourceJpgFile = path.join(sourceDir, `${file}.jpg`);
 
-      // Process .mov files
+      // Check if the .mov file exists before copying
       if (await fs.pathExists(sourceFile)) {
+        // Copy and rename .mov files
         for (const destinationDir of destinationDirs) {
-          await copyFiles(sourceFile, destinationDir, subDir, file, '-L.mov');
-          await copyFiles(sourceFile, destinationDir, subDir, file, '-H.mov');
+          const lowDestinationFile = path.join(__dirname, destinationDir, subDir, `${file}-L.mo`);
+          const highDestinationFile = path.join(__dirname, destinationDir, subDir, `${file}-H.mo`);
+          
+          await fs.ensureDir(path.dirname(lowDestinationFile));
+          await fs.ensureDir(path.dirname(highDestinationFile));
+          await fs.copy(sourceFile, lowDestinationFile);
+          await fs.copy(sourceFile, highDestinationFile);
         }
       }
 
-      // Process .jpg files
+      // Check if the .jpg file exists before copying
       if (await fs.pathExists(sourceJpgFile)) {
+        // Copy .jpg files without renaming
         for (const destinationDir of destinationDirs) {
-          await copyFiles(sourceJpgFile, destinationDir, subDir, file, '.jpg');
+          const jpgDestinationFile = path.join(__dirname, destinationDir, subDir, `${file}.jpg`);
+          
+          await fs.ensureDir(path.dirname(jpgDestinationFile));
+          await fs.copy(sourceJpgFile, jpgDestinationFile);
         }
       }
     }
   } catch (err) {
-    error('Error copying and renaming movies and images:', err);
+    console.error('Error copying and renaming movies and images:', err);
   }
 }
 
