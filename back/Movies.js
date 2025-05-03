@@ -51,19 +51,22 @@ async function copyAndRenameMovies() {
     for (const fileName of fileNames) {
       const [subDir, file] = fileName.split('/');
       const sourceFile = path.join(sourceDir, `${file}.mo`);
+      const movsourceFile = path.join(sourceDir, `${file}.mov`);
       const sourceJpgFile = path.join(sourceDir, `${file}.jpg`);
 
       // Check if the .mov file exists before copying
       if (await fs.pathExists(sourceFile)) {
         // Copy and rename .mov files
         for (const destinationDir of destinationDirs) {
-          const lowDestinationFile = path.join(__dirname, destinationDir, subDir, `${file}-L.mo`);
-          const highDestinationFile = path.join(__dirname, destinationDir, subDir, `${file}-H.mo`);
+          const lowDestinationFile = path.join(__dirname, destinationDir, subDir, `${file}-L.mov`);
+          const highDestinationFile = path.join(__dirname, destinationDir, subDir, `${file}-H.mov`);
           
           await fs.ensureDir(path.dirname(lowDestinationFile));
           await fs.ensureDir(path.dirname(highDestinationFile));
           await fs.copy(sourceFile, lowDestinationFile);
           await fs.copy(sourceFile, highDestinationFile);
+          await fs.copy(movsourceFile, lowDestinationFile);
+          await fs.copy(movsourceFile, highDestinationFile);
         }
       }
 
